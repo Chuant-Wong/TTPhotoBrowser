@@ -2,21 +2,14 @@
 
 使用如下
 
-let browser = TTPhotoBrowser()
-
-browser.photos = images as! [UIImage]
-
-browser.browserType = .edit
-
-//当browserType = .edit时  调用block
-
-browser.block = ({ index in
-
-images.remove(at: index)
-
-//index（删除图片位置的索引）
-
-//刷新当前界面
+let browser = TTPhotoBrowser() <br>
+browser.photos = images as! [UIImage] <br>
+browser.browserType = .edit <br>
+//当browserType = .edit时  调用block <br>
+browser.block = ({ index in <br>
+>>images.remove(at: index) <br>
+>>//index（删除图片位置的索引）<br>
+>>//刷新当前界面 <br>
 
 })
 
