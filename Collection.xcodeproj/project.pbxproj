@@ -12,6 +12,13 @@
 		E0126C061E57FAC70089268A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0126C041E57FAC70089268A /* Main.storyboard */; };
 		E0126C081E57FAC70089268A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0126C071E57FAC70089268A /* Assets.xcassets */; };
 		E0126C0B1E57FAC70089268A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0126C091E57FAC70089268A /* LaunchScreen.storyboard */; };
+		E0126C141E57FCA80089268A /* TTPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0126C131E57FCA80089268A /* TTPhotoBrowser.swift */; };
+		E0126C161E57FEC30089268A /* TTPhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0126C151E57FEC30089268A /* TTPhotoCollectionCell.swift */; };
+		E07AADD41E5889DE00476EAE /* TTPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07AADD31E5889DE00476EAE /* TTPhotoView.swift */; };
+		E0D7F0D71E59310C00792A13 /* photo1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = E0D7F0D21E59310C00792A13 /* photo1.JPG */; };
+		E0D7F0D81E59310C00792A13 /* photo2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = E0D7F0D31E59310C00792A13 /* photo2.JPG */; };
+		E0D7F0D91E59310C00792A13 /* photo3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = E0D7F0D41E59310C00792A13 /* photo3.JPG */; };
+		E0D7F0DA1E59310C00792A13 /* photo4.JPG in Resources */ = {isa = PBXBuildFile; fileRef = E0D7F0D51E59310C00792A13 /* photo4.JPG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		E0126C071E57FAC70089268A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0126C0A1E57FAC70089268A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0126C0C1E57FAC70089268A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0126C131E57FCA80089268A /* TTPhotoBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTPhotoBrowser.swift; sourceTree = "<group>"; };
+		E0126C151E57FEC30089268A /* TTPhotoCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTPhotoCollectionCell.swift; sourceTree = "<group>"; };
+		E07AADD31E5889DE00476EAE /* TTPhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTPhotoView.swift; sourceTree = "<group>"; };
+		E0D7F0D21E59310C00792A13 /* photo1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo1.JPG; sourceTree = "<group>"; };
+		E0D7F0D31E59310C00792A13 /* photo2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo2.JPG; sourceTree = "<group>"; };
+		E0D7F0D41E59310C00792A13 /* photo3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo3.JPG; sourceTree = "<group>"; };
+		E0D7F0D51E59310C00792A13 /* photo4.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo4.JPG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +70,35 @@
 			children = (
 				E0126C001E57FAC70089268A /* AppDelegate.swift */,
 				E0126C021E57FAC70089268A /* ViewController.swift */,
+				E0D7F0C71E592ED900792A13 /* Rescource */,
+				E0126C121E57FBE70089268A /* TTPhotoBrowser */,
 				E0126C041E57FAC70089268A /* Main.storyboard */,
 				E0126C071E57FAC70089268A /* Assets.xcassets */,
 				E0126C091E57FAC70089268A /* LaunchScreen.storyboard */,
 				E0126C0C1E57FAC70089268A /* Info.plist */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		E0126C121E57FBE70089268A /* TTPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				E0126C131E57FCA80089268A /* TTPhotoBrowser.swift */,
+				E0126C151E57FEC30089268A /* TTPhotoCollectionCell.swift */,
+				E07AADD31E5889DE00476EAE /* TTPhotoView.swift */,
+			);
+			path = TTPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		E0D7F0C71E592ED900792A13 /* Rescource */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7F0D21E59310C00792A13 /* photo1.JPG */,
+				E0D7F0D31E59310C00792A13 /* photo2.JPG */,
+				E0D7F0D41E59310C00792A13 /* photo3.JPG */,
+				E0D7F0D51E59310C00792A13 /* photo4.JPG */,
+			);
+			path = Rescource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +133,7 @@
 				TargetAttributes = {
 					E0126BFC1E57FAC70089268A = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = TDF97E4Z88;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -123,9 +161,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D7F0D81E59310C00792A13 /* photo2.JPG in Resources */,
+				E0D7F0D71E59310C00792A13 /* photo1.JPG in Resources */,
+				E0D7F0D91E59310C00792A13 /* photo3.JPG in Resources */,
 				E0126C0B1E57FAC70089268A /* LaunchScreen.storyboard in Resources */,
 				E0126C081E57FAC70089268A /* Assets.xcassets in Resources */,
 				E0126C061E57FAC70089268A /* Main.storyboard in Resources */,
+				E0D7F0DA1E59310C00792A13 /* photo4.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +178,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E07AADD41E5889DE00476EAE /* TTPhotoView.swift in Sources */,
+				E0126C161E57FEC30089268A /* TTPhotoCollectionCell.swift in Sources */,
+				E0126C141E57FCA80089268A /* TTPhotoBrowser.swift in Sources */,
 				E0126C031E57FAC70089268A /* ViewController.swift in Sources */,
 				E0126C011E57FAC70089268A /* AppDelegate.swift in Sources */,
 			);
@@ -258,7 +303,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TDF97E4Z88;
 				INFOPLIST_FILE = Collection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = collection.Collection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,7 +317,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TDF97E4Z88;
 				INFOPLIST_FILE = Collection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = collection.Collection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -297,6 +346,7 @@
 				E0126C111E57FAC70089268A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
