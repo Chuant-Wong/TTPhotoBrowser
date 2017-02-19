@@ -1,5 +1,7 @@
 # TTPhotoBrowser
 
+使用如下
+
 let browser = TTPhotoBrowser()
 
 browser.photos = images as! [UIImage]
