@@ -1,6 +1,6 @@
 # TTPhotoBrowser
-
-使用如下
+### 支持捏合手势
+使用如下:
 
 let browser = TTPhotoBrowser() <br>
 browser.photos = images as! [UIImage] <br>
