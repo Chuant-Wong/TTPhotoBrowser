@@ -1,4 +1,5 @@
 # TTPhotoBrowser
+## 将UIScrollView添加到UICollectionViewCell上，通过UICollectionView显示图片（目前不支持URL加载图片）
 ### 支持捏合手势
 使用如下:
 
