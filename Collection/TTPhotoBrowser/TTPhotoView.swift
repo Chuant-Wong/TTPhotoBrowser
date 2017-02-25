@@ -16,10 +16,9 @@ class TTPhotoView: UIScrollView, UIScrollViewDelegate {
     
     var photoView: UIImageView?
     var singleDelegate:TTPhotoViewDelegate?
-    
     private let MaxSCale:CGFloat = 2.0
     private let MinScale:CGFloat = 1.0
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initializeUI()
@@ -52,11 +51,13 @@ class TTPhotoView: UIScrollView, UIScrollViewDelegate {
         photoView?.addGestureRecognizer(doubleTap)
         
         singleTap.require(toFail: doubleTap)
+        
     }
     
     var photo:UIImage? {
         didSet {
             photoView?.image = photo
+            setZoomScales()
         }
     }
     
@@ -83,24 +84,43 @@ class TTPhotoView: UIScrollView, UIScrollViewDelegate {
                     singleDelegate?.singleTap()
                 }
             } else if(tap.numberOfTapsRequired == 2 ){
-                var newScale:CGFloat
-                if self.zoomScale == MinScale {
-                    newScale = MaxSCale
-                } else {
-                    newScale = 0.0
-                }
-                let zoomRect = self.zoomRectForScale(scale: newScale, center: tap.location(in: tap.view))
+                let zoomRect = zoomRectForScale(scale: becomeZoomSacle(), center: tap.location(in: photoView))
                 self.zoom(to: zoomRect, animated: true)
             }
         }
     }
     
+    func becomeZoomSacle() -> CGFloat {
+        if (self.zoomScale > self.minimumZoomScale) {
+            return self.minimumZoomScale;
+        } else {
+            return self.maximumZoomScale;
+        }
+    }
+    
+    func setZoomScales() {
+        let image = self.photoView?.image;
+        if (image == nil || image?.size.height == 0) {
+            return
+        }
+        let ratio = (image?.size.width)! / (image?.size.height)!
+        self.photoView?.frame.size.width = UIScreen.main.bounds.width
+        self.photoView?.frame.size.height = UIScreen.main.bounds.width / ratio;
+        self.photoView?.frame.origin.x = 0;
+        self.photoView?.frame.origin.y = (UIScreen.main.bounds.height - (self.photoView?.frame.height)! ) * 0.5;
+        self.maximumZoomScale = max(UIScreen.main.bounds.height / (self.photoView?.frame.height)!, MaxSCale)
+        self.minimumZoomScale = MinScale;
+        self.zoomScale = MinScale;
+        self.contentSize = CGSize(width: (self.photoView?.frame.width)!, height: max((self.photoView?.frame.height)!, UIScreen.main.bounds.height))
+    }
+    
+    
     func zoomRectForScale(scale:CGFloat, center:CGPoint) -> CGRect {
         var zoomRect = self.frame
-        zoomRect.size.height = self.frame.size.height/scale
-        zoomRect.size.width  = self.frame.size.width/scale
-        zoomRect.origin.x = center.x - (zoomRect.size.width/2.0)
-        zoomRect.origin.y = center.y - (zoomRect.size.height/2.0)
+        zoomRect.size.height = self.frame.size.height / scale
+        zoomRect.size.width  = self.frame.size.width / scale
+        zoomRect.origin.x = center.x - (zoomRect.size.width / 2.0)
+        zoomRect.origin.y = center.y - (zoomRect.size.height / 2.0)
         return zoomRect
     }
     

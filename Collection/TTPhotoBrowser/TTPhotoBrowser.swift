@@ -28,6 +28,8 @@ class TTPhotoBrowser: UIViewController, UICollectionViewDataSource, UICollection
         self.view.addSubview(collectionView)
         
         collectionView.register(TTPhotoCollectionCell.self, forCellWithReuseIdentifier: photoCell)
+        let indexPath = IndexPath(row: currentPage - 1, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -112,7 +114,7 @@ class TTPhotoBrowser: UIViewController, UICollectionViewDataSource, UICollection
         layoutFlow.scrollDirection = .horizontal
         layoutFlow.itemSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 1.0)
         let cv = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layoutFlow)
-        cv.backgroundColor = UIColor.white
+        cv.backgroundColor = UIColor.black
         cv.isPagingEnabled = true
         cv.delegate = self
         cv.dataSource = self
